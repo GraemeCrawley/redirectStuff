@@ -1,0 +1,10 @@
+/* Styles go here */
+
+  .category-list {
+    -moz-column-count: 4;
+    -webkit-column-count: 4;
+     column-count: 4;
+  }
+  .mdl-list__item {
+    transform: translateZ(0);
+  }
