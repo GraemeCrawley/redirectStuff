@@ -29,7 +29,7 @@ function readTextFile(file)
             {
                 var items1 = rawFile.responseText;
                 return items1;
-                alert(items1);
+                alert(items1 + "1");
                 
             }
         }
@@ -59,7 +59,7 @@ function makeUL(array) {
 var items = readTextFile("https://graemecrawley.github.io/redirectStuff/textFile.txt");
 
 // Add the contents of options[0] to #foo:
-alert(items);
+alert(items  + "2");
 alert(items[0])
 document.getElementById('foo').appendChild(makeUL(items[0]));
 
