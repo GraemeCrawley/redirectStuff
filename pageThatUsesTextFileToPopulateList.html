@@ -28,13 +28,11 @@ function readTextFile(file)
             if(rawFile.status === 200 || rawFile.status == 0)
             {
                 var items1 = rawFile.responseText;
-                return items1;
-                alert(items1 + "1");
-                
+                return items1;                
             }
         }
     }
-    rawFile.send(null);
+    rawFile.send(items1);
 }
 
 function makeUL(array) {
