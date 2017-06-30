@@ -17,8 +17,6 @@
 
  <script type="text/javascript">
 
-var items = readTextFile("https://graemecrawley.github.io/redirectStuff/textFile.txt");
-
 function readTextFile(file)
 {
     var rawFile = new XMLHttpRequest();
@@ -56,6 +54,8 @@ function makeUL(array) {
     // Finally, return the constructed list:
     return list;
 }
+
+var items = readTextFile("https://graemecrawley.github.io/redirectStuff/textFile.txt");
 
 // Add the contents of options[0] to #foo:
 alert(items);
