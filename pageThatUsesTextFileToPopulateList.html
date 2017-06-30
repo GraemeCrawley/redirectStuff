@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.0/material.grey-red.min.css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/scripts.js"></script>
+    
+ </head>
+
+<body>
+
+<div id="foo"></div>
+
+ <script type="text/javascript">
+
+var items = readTextFile("https://graemecrawley.github.io/textFile.txt");
+
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var items1 = rawFile.responseText.split(',');
+                alert(items1);
+            }
+        }
+    }
+    rawFile.send(null);
+}
+
+function makeUL(array) {
+    // Create the list element:
+    var list = document.createElement('ul');
+
+    for(var i = 0; i < array.length; i++) {
+        // Create the list item:
+        var item = document.createElement('li');
+
+        // Set its contents:
+        item.appendChild(document.createTextNode(array[i]));
+
+        // Add it to the list:
+        list.appendChild(item);
+    }
+
+    // Finally, return the constructed list:
+    return list;
+}
+
+// Add the contents of options[0] to #foo:
+document.getElementById('foo').appendChild(makeUL(items[0]));
+
+</script>
+
+
+
+</body>
+
+</html>
