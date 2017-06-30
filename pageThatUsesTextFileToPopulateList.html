@@ -17,22 +17,26 @@
 
  <script type="text/javascript">
 
-function readTextFile(file)
-{
-    var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", file, false);
-    rawFile.onreadystatechange = function ()
-    {
-        if(rawFile.readyState === 4)
-        {
-            if(rawFile.status === 200 || rawFile.status == 0)
-            {
-                var items1 = rawFile.responseText;
-                return items1;                
+window.onload = function() {
+        var fileInput = document.getElementById('../textFile.txt');
+        var fileDisplayArea = []
+
+        fileInput.addEventListener('change', function(e) {
+            var file = fileInput.files[0];
+            var textType = /text.*/;
+
+            if (file.type.match(textType)) {
+                var reader = new FileReader();
+
+                reader.onload = function(e) {
+                    fileDisplayArea = reader.result;
+                }
+
+                reader.readAsText(file);    
+            } else {
+                alert("File not supported!")
             }
-        }
-    }
-    rawFile.send(items1);
+        });
 }
 
 function makeUL(array) {
