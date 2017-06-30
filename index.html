@@ -17,32 +17,20 @@
 <body>
 
  <script type="text/javascript">
- var x= [];
- var list = document.getElementById('demo');
+  function changeText2(){
+ var list = document.getElementById('list-id');
  var firstname = document.getElementById('firstname').value;
 var entry = document.createElement('li');
-entry.appendChild(document.createTextNode(firstname));
+entry.classList.add('mdl-list__item');
+var liSpan = document.createElement('span')
+liSpan.innerHTML = firstname;
+entry.appendChild(liSpan);
+
 list.appendChild(entry);
-
- function changeText2(){
-var firstname = document.getElementById('firstname').value;
-document.getElementById('boldStuff2').innerHTML = firstname;
-x.push(firstname);
-document.getElementById('demo').innerHTML = x;
- }
+}
+ 
  </script>
-
-First name: <input type="text" id="firstname"><br> 
-
-
- <p>Your first name is: <b id='boldStuff2'></b> </p> 
- <p> Other people's names: </p>
-
- <ol>
-     <li id = "demo"> </li> 
- </ol>
-
- <input type='button' onclick='changeText2()'   value='Submit'/> 
+ 
 <div class="docs-text-styling component-title">
           <h3>TODO Redirect</h3>
           <p>There are waaaay better things to do than whatever you were just trying to do. Check out the list below to see.</p>
@@ -140,6 +128,11 @@ First name: <input type="text" id="firstname"><br>
   </li>
 </ul>
 </div>
+
+
+
+
+ 
 
 </body>
 
