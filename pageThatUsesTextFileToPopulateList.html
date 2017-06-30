@@ -28,8 +28,9 @@ function readTextFile(file)
             if(rawFile.status === 200 || rawFile.status == 0)
             {
                 var items1 = rawFile.responseText;
+                return items1;
                 alert(items1);
-                return items1
+                
             }
         }
     }
