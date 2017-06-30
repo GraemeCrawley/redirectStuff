@@ -29,7 +29,7 @@ function readTextFile(file)
         {
             if(rawFile.status === 200 || rawFile.status == 0)
             {
-                var items1 = rawFile.responseText.split(',');
+                var items1 = rawFile.responseText;
                 alert(items1);
             }
         }
