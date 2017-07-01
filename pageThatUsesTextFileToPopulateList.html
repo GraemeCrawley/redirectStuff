@@ -20,23 +20,20 @@
 window.onload = function() {
         var fileInput = document.getElementById('../textFile.txt');
         var fileDisplayArea = []
+        var file = fileInput.files[0];
+        var textType = /text.*/;
 
-        fileInput.addEventListener('change', function(e) {
-            var file = fileInput.files[0];
-            var textType = /text.*/;
+        if (file.type.match(textType)) {
+            var reader = new FileReader();
 
-            if (file.type.match(textType)) {
-                var reader = new FileReader();
-
-                reader.onload = function(e) {
-                    fileDisplayArea = reader.result;
-                }
-
-                reader.readAsText(file);    
-            } else {
-                alert("File not supported!")
+            reader.onload = function(e) {
+                fileDisplayArea  = reader.result;
             }
-        });
+
+            reader.readAsText(file);    
+        } else {
+            alert("File not supported!")
+        }
 }
 
 function makeUL(array) {
